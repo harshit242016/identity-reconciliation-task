@@ -7,7 +7,7 @@ const updateUserData = async (linkedId, linkedPrecedence,userData) => {
     where id = $3`;
     const values = [linkedId, linkedPrecedence, userData[1].id];
     await client.query(query, values);
-    return {response};
+    return {message : "Record updated Successfully"};
 }
 
 const createUserData = async(phoneNumber, email, linkedId, linkedPrecedence) => {
